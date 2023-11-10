@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <!-- settings -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Truco</title>
+
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Signika+Negative:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- styles -->
+    <link rel="stylesheet" href="./src/styles/reset.css">
+    <link rel="stylesheet" href="./src/styles/main.css">
+</head>
+
+<body>
+    <div class='container'>
+        <div class="intro">
+            <h1 id="title">Truco</h1>
+            <h3 id="subtitle">Mão de Onze</h3>
+            <button class="play" onclick="init()">PLAY</button>
+        </div>
+        <div class="game hidden">
+            <div class="hand top">
+                <div class="cards">
+                    <div class="card" id="opponent1"></div>
+                    <div class="card" id="opponent2"></div>
+                    <div class="card" id="opponent3"></div>
+                </div>
+            </div>
+            <div class="middle">
+                <div class="versus">
+                    <div class="card match-card hidde" id="player"></div>
+                    <div class="tip">
+                        <div class="points">
+                            <h1 id="player-points">0</h1>
+                            <h1>vs.</h1>
+                            <h1 id="opponent-points">0</h1>
+                        </div>
+                        <h3>select a card</h3>
+                    </div>
+                    <div class="card match-card hidde" id="opponent"></div>
+                </div>
+            </div>
+            <div class="hand bottom">
+                <div class="cards">
+                    <div class="card my-card" id="player1" onclick="selectCard(0)"></div>
+                    <div class="card my-card" id="player2" onclick="selectCard(1)"></div>
+                    <div class="card my-card" id="player3" onclick="selectCard(2)"></div>
+                </div>
+            </div>
+        </div>
+        <audio controls autoplay loop>
+            <source src="./src/audios/music.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+    </div>
+
+    <!-- scripts -->
+    <script defer src="./src/scripts/engine.js"></script>
+</body>
+
+</html>
